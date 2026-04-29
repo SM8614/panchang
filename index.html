@@ -632,7 +632,7 @@ function render() {
   const yi  = yogaIdx(refJD);
   const kar = karanaInfo(refJD);
   const mi  = masaIdx(refJD);
-  const dow = new Date(dateStr + 'T12:00:00').getDay();
+  const dow = new Date(dateStr + 'T12:00:00Z').getUTCDay();
 
   // ── End times (binary search forward from sunrise) ────────
   const tiEnd = findEnd(refJD, tithiIdx);
@@ -900,7 +900,7 @@ function showGeoError(msg) {
 // ═══════════════════════════════════════════════════════════
 
 window.addEventListener('DOMContentLoaded', () => {
-  const today = new Date().toISOString().slice(0,10);
+  const today = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD in browser's local timezone
   state.dateStr = today;
   document.getElementById('dateInput').value = today;
   document.getElementById('dateInput').addEventListener('change', e => {
