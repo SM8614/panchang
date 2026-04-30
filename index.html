@@ -61,6 +61,8 @@
       border-radius: 5px; font-family: inherit; font-size: .85rem;
       background: #fff; color: var(--text);
     }
+    #cityInput { width: 220px; }
+    @media(max-width:560px){ #cityInput { width: 150px; } }
     .btn {
       background: var(--red); color: #fff; border: none;
       padding: 6px 14px; border-radius: 5px; cursor: pointer;
@@ -200,78 +202,8 @@
   </div>
   <div class="ctrl">
     <label>📍 City</label>
-    <select id="citySelect">
-      <optgroup label="🇮🇳 India">
-        <option value="17.3850,78.4867,Asia/Kolkata">Hyderabad</option>
-        <option value="13.0827,80.2707,Asia/Kolkata">Chennai</option>
-        <option value="12.9716,77.5946,Asia/Kolkata">Bengaluru</option>
-        <option value="19.0760,72.8777,Asia/Kolkata">Mumbai</option>
-        <option value="28.6139,77.2090,Asia/Kolkata">New Delhi</option>
-        <option value="22.5726,88.3639,Asia/Kolkata">Kolkata</option>
-        <option value="17.6868,83.2185,Asia/Kolkata">Visakhapatnam</option>
-        <option value="16.5062,80.6480,Asia/Kolkata">Vijayawada</option>
-        <option value="13.6288,79.4192,Asia/Kolkata">Tirupati</option>
-        <option value="10.7905,78.7047,Asia/Kolkata">Tiruchirappalli</option>
-        <option value="9.9252,78.1198,Asia/Kolkata">Madurai</option>
-        <option value="9.9312,76.2673,Asia/Kolkata">Kochi</option>
-        <option value="8.5241,76.9366,Asia/Kolkata">Thiruvananthapuram</option>
-        <option value="23.0225,72.5714,Asia/Kolkata">Ahmedabad</option>
-        <option value="26.9124,75.7873,Asia/Kolkata">Jaipur</option>
-        <option value="21.1702,72.8311,Asia/Kolkata">Surat</option>
-        <option value="18.5204,73.8567,Asia/Kolkata">Pune</option>
-        <option value="15.3173,75.7139,Asia/Kolkata">Hubli-Dharwad</option>
-        <option value="11.0168,76.9558,Asia/Kolkata">Coimbatore</option>
-        <option value="25.3176,82.9739,Asia/Kolkata">Varanasi</option>
-        <option value="26.8467,80.9462,Asia/Kolkata">Lucknow</option>
-      </optgroup>
-      <optgroup label="🇺🇸 USA — East Coast">
-        <option value="40.7128,-74.0060,America/New_York">New York, NY</option>
-        <option value="42.3601,-71.0589,America/New_York">Boston, MA</option>
-        <option value="39.9526,-75.1652,America/New_York">Philadelphia, PA</option>
-        <option value="38.9072,-77.0369,America/New_York">Washington DC</option>
-        <option value="33.7490,-84.3880,America/New_York">Atlanta, GA</option>
-        <option value="25.7617,-80.1918,America/New_York">Miami, FL</option>
-        <option value="27.9506,-82.4572,America/New_York">Tampa, FL</option>
-        <option value="28.5383,-81.3792,America/New_York">Orlando, FL</option>
-        <option value="35.2271,-80.8431,America/New_York">Charlotte, NC</option>
-        <option value="35.7796,-78.6382,America/New_York">Raleigh, NC</option>
-        <option value="39.2904,-76.6122,America/New_York">Baltimore, MD</option>
-        <option value="42.3314,-83.0458,America/Detroit">Detroit, MI</option>
-        <option value="41.4993,-81.6944,America/New_York">Cleveland, OH</option>
-        <option value="39.1031,-84.5120,America/New_York">Cincinnati, OH</option>
-        <option value="40.4406,-79.9959,America/New_York">Pittsburgh, PA</option>
-      </optgroup>
-      <optgroup label="🇺🇸 USA — Central">
-        <option value="41.8781,-87.6298,America/Chicago">Chicago, IL</option>
-        <option value="29.7604,-95.3698,America/Chicago">Houston, TX</option>
-        <option value="32.7767,-96.7970,America/Chicago">Dallas, TX</option>
-        <option value="29.4241,-98.4936,America/Chicago">San Antonio, TX</option>
-        <option value="30.2672,-97.7431,America/Chicago">Austin, TX</option>
-        <option value="39.0997,-94.5786,America/Chicago">Kansas City, MO</option>
-        <option value="38.6270,-90.1994,America/Chicago">St. Louis, MO</option>
-        <option value="44.9778,-93.2650,America/Chicago">Minneapolis, MN</option>
-        <option value="36.1627,-86.7816,America/Chicago">Nashville, TN</option>
-        <option value="35.1495,-90.0490,America/Chicago">Memphis, TN</option>
-        <option value="30.3322,-81.6557,America/New_York">Jacksonville, FL</option>
-      </optgroup>
-      <optgroup label="🇺🇸 USA — Mountain &amp; West">
-        <option value="34.0522,-118.2437,America/Los_Angeles">Los Angeles, CA</option>
-        <option value="37.7749,-122.4194,America/Los_Angeles">San Francisco, CA</option>
-        <option value="32.7157,-117.1611,America/Los_Angeles">San Diego, CA</option>
-        <option value="37.3382,-121.8863,America/Los_Angeles">San Jose, CA</option>
-        <option value="38.5816,-121.4944,America/Los_Angeles">Sacramento, CA</option>
-        <option value="47.6062,-122.3321,America/Los_Angeles">Seattle, WA</option>
-        <option value="45.5231,-122.6765,America/Los_Angeles">Portland, OR</option>
-        <option value="36.1699,-115.1398,America/Los_Angeles">Las Vegas, NV</option>
-        <option value="39.7392,-104.9903,America/Denver">Denver, CO</option>
-        <option value="33.4484,-112.0740,America/Phoenix">Phoenix, AZ</option>
-        <option value="35.0844,-106.6504,America/Denver">Albuquerque, NM</option>
-        <option value="40.7608,-111.8910,America/Denver">Salt Lake City, UT</option>
-      </optgroup>
-      <optgroup label="📌 Custom">
-        <option value="custom">📌 My Detected Location</option>
-      </optgroup>
-    </select>
+    <input type="text" id="cityInput" placeholder="e.g. Hyderabad, Washington DC…" autocomplete="off" />
+    <button class="btn secondary" id="citySearchBtn" onclick="searchCity()">Search</button>
   </div>
   <button class="btn secondary" id="geoBtn" onclick="geoLocate()">📍 Detect Location</button>
   <button class="btn" onclick="go()">🔄 Calculate</button>
@@ -823,18 +755,67 @@ function render() {
 function go() {
   const dv = document.getElementById('dateInput').value;
   if (dv) state.dateStr = dv;
-
-  const sel = document.getElementById('citySelect');
-  if (sel.value !== 'custom') {
-    const parts = sel.value.split(',');
-    state.lat  = parseFloat(parts[0]);
-    state.lon  = parseFloat(parts[1]);
-    state.tz   = parts[2] || 'Asia/Kolkata';
-    state.city = sel.options[sel.selectedIndex].text;
-  }
   render();
 }
 
+// ── Fetch IANA timezone for given coordinates via timeapi.io ──
+async function fetchTimezone(lat, lon) {
+  try {
+    const r = await fetch(`https://timeapi.io/api/TimeZone/coordinate?latitude=${lat}&longitude=${lon}`);
+    const d = await r.json();
+    if (d.timeZone) return d.timeZone;
+  } catch(e) {}
+  // Fallback: browser's own timezone
+  return Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+}
+
+// ── Search city by name (Nominatim geocoding) ──
+async function searchCity() {
+  const input = document.getElementById('cityInput');
+  const btn   = document.getElementById('citySearchBtn');
+  const query = input.value.trim();
+  if (!query) return;
+
+  btn.textContent = '⏳…';
+  btn.disabled = true;
+
+  try {
+    // Geocode city name → lat/lon
+    const geoResp = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=1`,
+      { headers: { 'Accept-Language': 'en' } }
+    );
+    const geoData = await geoResp.json();
+    if (!geoData.length) throw new Error(`"${query}" not found. Try a different spelling or add country name.`);
+
+    const lat  = parseFloat(geoData[0].lat);
+    const lon  = parseFloat(geoData[0].lon);
+    // Use display_name parts for a clean city label
+    const parts = geoData[0].display_name.split(',').map(s => s.trim());
+    const name  = parts.slice(0, 2).join(', ');
+
+    // Get precise IANA timezone for these coordinates
+    const tz = await fetchTimezone(lat, lon);
+
+    state.lat  = lat;
+    state.lon  = lon;
+    state.tz   = tz;
+    state.city = name;
+    input.value = name;
+
+    const dv = document.getElementById('dateInput').value;
+    if (dv) state.dateStr = dv;
+    render();
+
+  } catch(e) {
+    showGeoError(e.message || 'Could not find city.');
+  } finally {
+    btn.textContent = 'Search';
+    btn.disabled = false;
+  }
+}
+
+// ── Detect location via browser GPS ──
 function geoLocate() {
   const btn = document.getElementById('geoBtn');
 
@@ -843,46 +824,66 @@ function geoLocate() {
     return;
   }
 
-  // Visual feedback while waiting
   btn.textContent = '⏳ Detecting…';
   btn.disabled = true;
 
   navigator.geolocation.getCurrentPosition(
     // ── SUCCESS ──
-    pos => {
+    async pos => {
+      const lat = pos.coords.latitude;
+      const lon = pos.coords.longitude;
+
+      try {
+        // 1. Get precise timezone from coordinates
+        const tz = await fetchTimezone(lat, lon);
+
+        // 2. Reverse geocode to get a real city name
+        const revResp = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`,
+          { headers: { 'Accept-Language': 'en' } }
+        );
+        const revData = await revResp.json();
+        const addr    = revData.address || {};
+        const city    = addr.city || addr.town || addr.village || addr.county || addr.state || '';
+        const country = addr.country || '';
+        const label   = city && country ? `${city}, ${country}` :
+                        city            ? city :
+                        `${lat.toFixed(3)}°, ${lon.toFixed(3)}°`;
+
+        state.lat  = lat;
+        state.lon  = lon;
+        state.tz   = tz;
+        state.city = label;
+        document.getElementById('cityInput').value = label;
+
+      } catch(e) {
+        // Fallback if network calls fail
+        state.lat  = lat;
+        state.lon  = lon;
+        state.tz   = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+        state.city = `${lat.toFixed(3)}°, ${lon.toFixed(3)}°`;
+        document.getElementById('cityInput').value = state.city;
+      }
+
       btn.textContent = '📍 Detect Location';
       btn.disabled = false;
 
-      state.lat  = pos.coords.latitude;
-      state.lon  = pos.coords.longitude;
-      // Use the browser's own IANA timezone — correct for the user's machine
-      state.tz   = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-      state.city = `My Location (${state.lat.toFixed(3)}°, ${state.lon.toFixed(3)}°)`;
-
-      // Mark the dropdown so it shows the custom option
-      const sel = document.getElementById('citySelect');
-      sel.value = 'custom';
-
-      // Make sure dateStr is set before rendering
       const dv = document.getElementById('dateInput').value;
       if (dv) state.dateStr = dv;
-
       render();
     },
     // ── ERROR ──
     err => {
       btn.textContent = '📍 Detect Location';
       btn.disabled = false;
-
       const msgs = {
-        1: 'Location permission was denied.\n\nTo fix: click the 🔒 lock icon in your browser address bar → allow Location access → try again.',
-        2: 'Your position could not be determined. Check that location services are enabled on your device.',
+        1: 'Location permission denied. Click the 🔒 lock icon in your browser address bar → allow Location → try again.',
+        2: 'Position could not be determined. Check that location services are enabled on your device.',
         3: 'Location request timed out. Please try again.'
       };
       showGeoError(msgs[err.code] || 'Location error: ' + err.message);
     },
-    // ── OPTIONS ──
-    { enableHighAccuracy: false, timeout: 12000, maximumAge: 300000 }
+    { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 }
   );
 }
 
@@ -903,10 +904,19 @@ window.addEventListener('DOMContentLoaded', () => {
   const today = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD in browser's local timezone
   state.dateStr = today;
   document.getElementById('dateInput').value = today;
+
   document.getElementById('dateInput').addEventListener('change', e => {
     state.dateStr = e.target.value; render();
   });
-  document.getElementById('citySelect').addEventListener('change', go);
+
+  // Allow Enter key to trigger city search
+  document.getElementById('cityInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') searchCity();
+  });
+
+  // Pre-fill with default city
+  document.getElementById('cityInput').value = state.city;
+
   render();
 });
 </script>
